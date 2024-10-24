@@ -39,6 +39,11 @@ class MilageCreateAPIView(generics.CreateAPIView):
     serializer_class = MilageSerializer
 
 
+class MilageListAPIView(generics.ListAPIView):
+    serializer_class = MilageSerializer
+    queryset = Milage.objects.all()
+
+
 # List Moto #########################################################
 class MotoMilageListAPIView(generics.ListAPIView):
     serializer_class = MotoMilageSerializer
