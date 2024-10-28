@@ -1,3 +1,4 @@
+from config import settings
 from django.db import models
 
 NULLABLE = {'blank': True, 'null': True}
@@ -6,6 +7,9 @@ NULLABLE = {'blank': True, 'null': True}
 class Car(models.Model):
     title = models.CharField(max_length=150, verbose_name='наименование')
     description = models.TextField(verbose_name='описание')
+
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, **NULLABLE, related_name='car_owner',
+                              verbose_name='владелец')
 
     def __str__(self):
         return self.title
@@ -18,6 +22,9 @@ class Car(models.Model):
 class Moto(models.Model):
     title = models.CharField(max_length=150, verbose_name='наименование')
     description = models.TextField(verbose_name='описание')
+
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, **NULLABLE, related_name='moto_owner',
+                              verbose_name='владелец')
 
     def __str__(self):
         return self.title
