@@ -53,5 +53,5 @@ class VehicleTestCase(APITestCase):
 
         self.assertEqual(
             response.json(),
-            [{'id': 1, 'milage': [], 'title': 'list_test', 'description': 'list_test', 'owner': None}]
+            [{'id': 2, 'milage': [], 'title': 'list_test', 'description': 'list_test', 'owner': None}]
         )
