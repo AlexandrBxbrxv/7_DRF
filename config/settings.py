@@ -140,3 +140,6 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False
+
+CUR_API_URL = os.getenv('CUR_API_URL')
+CUR_API_KEY = os.getenv('CUR_API_KEY')

@@ -7,6 +7,7 @@ NULLABLE = {'blank': True, 'null': True}
 class Car(models.Model):
     title = models.CharField(max_length=150, verbose_name='наименование')
     description = models.TextField(verbose_name='описание')
+    amount = models.IntegerField(default=1000, verbose_name='сумма')
 
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, **NULLABLE, related_name='car_owner',
                               verbose_name='владелец')
