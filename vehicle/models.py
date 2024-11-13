@@ -8,6 +8,7 @@ class Car(models.Model):
     title = models.CharField(max_length=150, verbose_name='наименование')
     description = models.TextField(verbose_name='описание')
     amount = models.IntegerField(default=1000, verbose_name='сумма')
+    price = models.DecimalField(max_digits=12, decimal_places=2, default=0, verbose_name='цена')
 
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, **NULLABLE, related_name='car_owner',
                               verbose_name='владелец')
@@ -23,6 +24,7 @@ class Car(models.Model):
 class Moto(models.Model):
     title = models.CharField(max_length=150, verbose_name='наименование')
     description = models.TextField(verbose_name='описание')
+    price = models.DecimalField(max_digits=12, decimal_places=2, default=0, verbose_name='цена')
 
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, **NULLABLE, related_name='moto_owner',
                               verbose_name='владелец')
